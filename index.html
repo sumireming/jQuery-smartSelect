@@ -2,7 +2,7 @@
 <html>
 <head>
 <script src="lib/jquery.min.js"></script>
-<link href="lib/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <script src="lib/cn2py.js"></script>
   <meta charset="utf-8">
   <title>smart-select</title>
@@ -10,24 +10,48 @@
 <style type="text/css">
   .container{padding: 30px;}
 
-  .smartselect{width:200px;border:1px solid #fff; position: relative;}
-  .smartselect .smartselect-input .sm-select{width: 100%;height: 26px; background: #f1f1f1; color: #444; border: 1px solid #ccc; border-radius: 5px;text-indent: 10px; line-height: 26px;}
+  .smartselect{width:200px;border:1px solid #fff; position: relative;display: inline-block;margin-top: -5px;}
+  .smartselect .smartselect-input .sm-select{width: 100%;height: 26px; background: #FFFFFF; color: #444; border: 1px solid #ccc; border-radius: 5px;text-indent: 5px; line-height: 26px;}
+  .smartselect .smartselect-input .sm-select i{float: right; margin: 5px;}
   .smartselect .smartselect-search{width:100%; border: 1px solid #bbb; position: absolute; z-index: 999; background: #ffffff;}
-  .smartselect .smartselect-search input{width:80%;padding:0px;margin:5px 5px;outline:0px;cursor:pointer;}
-  .smartselect .smartselect-options ul{list-style:none;padding:0px;margin:0px; width:100%;}
-  .smartselect .smartselect-options ul li{text-indent:10px;width: 97%; margin: 2px; }
-  .smartselect .smartselect-options ul li.hover{background: #d9edf7; }
+  .smartselect .smartselect-search input{width:93%;padding:0px;margin:5px 5px;outline:0px;cursor:pointer;}
+  .smartselect .smartselect-search i{right: 12px;position: absolute;top: 9px;}
+  .smartselect .smartselect-options ul{list-style:none;padding:0px;margin:0px; width:100%; max-height: 310px; overflow-y: scroll;}
+  .smartselect .smartselect-options ul li{text-indent:5px;width: 97%; margin: 2px; }
+  .smartselect .smartselect-options ul li.hover{background: #4899fb; }
 </style>
 <body class="container">
   <form class="form-horizontal">
     <div class="control-group">
-      <label class="control-label" for="inputEmail">name</label>
+      <label class="control-label">normal select:</label>
       <div class="controls">
-        <input type="text" id="inputEmail" placeholder="name">
+          <select id="select1" name="appid">
+            <option value="ex_bydz_9sH6dXG">佰游德州</option>
+            <option value="mm_bfsgly_FVgrqgde">陌陌熊熊消</option>
+            <option value="ex_ddz_8nTFeiGK">炸弹斗地主</option>
+            <option value="mm_farm_nxVNJG">我的爱琴海</option>
+            <option value="ex_xqqn_9BNiXdm">陌陌弹珠：聂小倩传奇</option>
+            <option value="ex_hero_X8dFahX">陌陌英雄</option>
+            <option value="mm_jwt_0vYpxq1">陌陌劲舞团</option>
+            <option value="ex_godness_dhxsVBf">星座女神</option>
+            <option value="ex_lsg_243gHMd">陌陌争霸尝鲜服</option>
+            <option value="ex_wsddx_REfjeNyQ">我是大大侠：武林大会</option>
+            <option value="ex_TD_tgJbrKR">塔塔塔防陌陌哒</option>
+            <option value="ex_mmzb_wFaBpbG">陌陌争霸</option>
+            <option value="ex_dota_x4Q95T">刀塔传奇</option>
+            <option value="ex_gdmxd_EhThf4w">格斗冒险岛</option>
+            <option value="ex_lyzr_QKMdKbs">烈焰之刃</option>
+            <option value="ex_tlbb_2YiL29Yw">天龙八部3D</option>
+            <option value="ex_op_SdBi6Ee">航海王启航-正版海贼</option>
+            <option value="mm_center_6dbtqHDv">陌陌游戏中心</option>
+            <option value="ex_xjlr_p4dPYR">星河使命</option>
+            <option value="ex_tlbbjb_7LHMgL">天龙八部3D越狱版</option>
+            <option value="ex_tielu_ipQ92N4t">中华铁路</option>
+          </select>
       </div>
     </div>
     <div class="control-group">
-      <label class="control-label" for="inputPassword">game</label>
+      <label class="control-label">smart select:</label>
       <div class="controls">
           <select id="select2" name="appid">
             <option value="ex_bydz_9sH6dXG">佰游德州</option>
@@ -62,4 +86,7 @@
   </form>
 </body>
 <script type="text/javascript" src="smartSelect.js"></script>
+<script type="text/javascript">
+  $('#select2').smartSelect()
+</script>
 </html>

@@ -46,7 +46,10 @@
 
     $.fn.smartSelect = function(obj) {
 
+    	if(this.length == 0) {return;}
+
         //init
+        obj = obj || {};
         var selectname = this.attr('name'),
             optionsdata = [];
         this.find('option').each(function(index, value){
@@ -61,7 +64,7 @@
             html = '',
             opts_html = '';
 
-        html = temp.replace(/\$searchable\$/g, obj.type=='search'?'':'hide');
+        html = temp.replace(/\$searchable\$/g, !obj.type||obj.type=='search' ? '':'hide');
         if(this.find('option:selected').length > 0){
             html = html.replace('$checked_name$', optionsdata[this.find('option:selected').index()].name).replace('$first_value$', optionsdata[this.find('option:selected').index()].value);
         }else{
